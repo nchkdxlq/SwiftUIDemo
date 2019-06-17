@@ -10,31 +10,30 @@ import SwiftUI
 import MapKit
 
 struct MapView : UIViewRepresentable {
+    typealias UIViewType = MKMapView
     
     var coordinate: CLLocationCoordinate2D
-    
-//    func makeUIView(context: UIViewRepresentableContext<MapView>) -> MapView.UIViewType {
-//        MKMapView(.zore)
-//    }
-//
-//
-//    func updateUIView(_ uiView: MapView.UIViewType, context: UIViewRepresentableContext<MapView>) {
-//
-//    }
-    
     
     func makeUIView(context: Context) -> MKMapView {
         MKMapView(frame: .zero)
     }
-    
+
     func updateUIView(_ view: MKMapView, context: Context) {
-        let coordinate = CLLocationCoordinate2D(
-            latitude: 22.33, longitude: 114.07)
         let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
         let region = MKCoordinateRegion(center: coordinate, span: span)
         view.setRegion(region, animated: true)
     }
 
+    
+//    func makeUIView(context: UIViewRepresentableContext<MapView>) -> MapView.UIViewType {
+//        MKMapView(frame: .zero)
+//    }
+//
+//    func updateUIView(_ uiView: MapView.UIViewType, context: UIViewRepresentableContext<MapView>) {
+//        let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
+//        let region = MKCoordinateRegion(center: coordinate, span: span)
+//        uiView.setRegion(region, animated: true)
+//    }
     
 }
 
