@@ -10,6 +10,9 @@ import SwiftUI
 import MapKit
 
 struct MapView : UIViewRepresentable {
+    
+    var coordinate: CLLocationCoordinate2D
+    
 //    func makeUIView(context: UIViewRepresentableContext<MapView>) -> MapView.UIViewType {
 //        MKMapView(.zore)
 //    }
@@ -27,7 +30,7 @@ struct MapView : UIViewRepresentable {
     func updateUIView(_ view: MKMapView, context: Context) {
         let coordinate = CLLocationCoordinate2D(
             latitude: 22.33, longitude: 114.07)
-        let span = MKCoordinateSpan(latitudeDelta: 2.0, longitudeDelta: 2.0)
+        let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
         let region = MKCoordinateRegion(center: coordinate, span: span)
         view.setRegion(region, animated: true)
     }
@@ -38,7 +41,7 @@ struct MapView : UIViewRepresentable {
 #if DEBUG
 struct MapView_Previews : PreviewProvider {
     static var previews: some View {
-        MapView()
+        MapView(coordinate: landmarkData[0].locationCoordinate)
     }
 }
 #endif
