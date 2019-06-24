@@ -14,8 +14,6 @@ struct LandmarkList : View {
     
     @EnvironmentObject var userData: UserData
     
-    
-    
     var body: some View {
         NavigationView {
             List {

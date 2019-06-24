@@ -63,8 +63,17 @@ struct LandmarkDetail : View {
 #if DEBUG
 struct ContentView_Previews : PreviewProvider {
     static var previews: some View {
+    
         LandmarkDetail(landmark: landmarkData[0])
-        .environmentObject(UserData())
+            .environmentObject(UserData())
+        
+//        ForEach(["iPhone SE", "iPhone XS Max"].identified(by: \.self)) { deviceName in
+//            LandmarkDetail(landmark: landmarkData[0])
+//                .environmentObject(UserData())
+//                .previewDevice(PreviewDevice(rawValue: deviceName))
+//                .previewDisplayName(deviceName)
+//        }
+    
     }
 }
 #endif
