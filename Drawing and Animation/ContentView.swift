@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  DrawingPathsAndShapes
+//  Drawing and Animation
 //
 //  Created by nchkdxlq on 2019/6/25.
 //  Copyright © 2019 luoquan. All rights reserved.
